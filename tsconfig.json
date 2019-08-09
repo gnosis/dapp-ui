@@ -31,5 +31,10 @@
             "jest"
         ],
         "baseUrl": "./src/"
-    }
+    },
+    "include": [
+        "src/**/*",
+        "typings.d.ts",
+        "src/typings.d.ts"
+    ]
 }

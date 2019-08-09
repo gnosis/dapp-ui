@@ -22,8 +22,14 @@ export const Global = createGlobalStyle`
     flex-direction: column;
    }
 
-  div, span, section, article, footer, header, main {
-    outline: 1px dotted gray;
+  // div, span, section, article, footer, header, main {
+  //   outline: 1px dotted gray;
+  // }
+
+  // fix for walletconnect modal
+  // not needed if we opt to display qrcode ourselves
+  #walletconnect-wrapper {
+    align-self: stretch;
   }
 `
 

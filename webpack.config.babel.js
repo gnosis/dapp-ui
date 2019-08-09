@@ -65,7 +65,7 @@ module.exports = ({ stats = false } = {}) => ({
             BASE_URL: baseUrl,
         }),
         new ForkTsCheckerWebpackPlugin({ silent: stats }),
-        isProduction && new DashboardPlugin(),
+        !isProduction && new DashboardPlugin(),
     ].filter(Boolean),
     optimization: {
         splitChunks: {
