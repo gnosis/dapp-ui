@@ -1,0 +1,31 @@
+{
+  "name": "gnosis-ui",
+  "version": "0.0.1",
+  "description": "Reusable React components and setup functions built with Typescript and love. From Gnosis.",
+  "main": "index.ts",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gnosis/ui.git"
+  },
+  "keywords": [
+    "gnosis",
+    "ui",
+    "ethereum",
+    "blockchain",
+    "typescript",
+    "javascript",
+    "react"
+  ],
+  "author": "David S <doohhello@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gnosis/ui/issues"
+  },
+  "homepage": "https://github.com/gnosis/ui#readme"
+}
