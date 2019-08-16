@@ -15,17 +15,12 @@ export const Global = createGlobalStyle`
     overflow: hidden;
     background: lightblue;
   }
-   body, #root {
+  body, #root {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-   }
-
-  // div, span, section, article, footer, header, main {
-  //   outline: 1px dotted gray;
-  // }
-
+  }
   // fix for walletconnect modal
   // not needed if we opt to display qrcode ourselves
   #walletconnect-wrapper {
