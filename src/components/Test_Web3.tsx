@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Web3Connector from './Test_Web3Connect'
+import Web3Connector from './Web3ConnectButton'
 import Web3ConnectorManual from './Test_Web3Connect_man'
 import Web3ProviderConnector from './Test_Web3Provider'
 import WalletConnector from './Test_WalletConnect'
