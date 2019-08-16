@@ -26,7 +26,9 @@
   },
   "homepage": "https://github.com/gnosis/ui#readme",
   "scripts": {
+    "postinstall": "cd ./examples/ts-frontend && npm i && cd ../../",
     "start": "NODE_ENV=development webpack-dev-server --mode development --hot",
+    "start:example-ts": "cd ./examples/ts-frontend && npm start && cd ../../",
     "build": "rimraf ./dist && NODE_ENV=production webpack --mode production",
     "eslint": "eslint . --ext .ts,.tsx,.js",
     "eslint-fix": "eslint --fix . --ext .ts,.tsx,.js",
