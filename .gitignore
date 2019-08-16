@@ -1,6 +1,7 @@
-.history
-node_modules
+.cache
 .DS_Store
+.history
 .vscode
-stats.json
 dist
+node_modules
+stats.json
