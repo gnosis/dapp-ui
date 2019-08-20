@@ -1,5 +1,5 @@
-# @gnosis.pm/ui
-<strong>Reusable dApp UI components and setup functions</strong>
+# @gnosis.pm/dapp-ui
+<strong>Reusable Dapp UI components and setup functions</strong>
 
 ## Setup
 As is probably already familiar, run:

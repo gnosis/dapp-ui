@@ -1,6 +1,6 @@
-# @gnosis.pm/ui ts frontend
+# @gnosis.pm/dapp-ui ts frontend
 
-Test app for use with `@gnosis.pm/ui`
+Test app for use with `@gnosis.pm/dapp-ui`
 
 ## Building and running on localhost
 
