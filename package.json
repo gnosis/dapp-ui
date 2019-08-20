@@ -37,11 +37,7 @@
     "test": "jest --detectOpenHandles"
   },
   "dependencies": {
-    "@hot-loader/react-dom": "^16.8.6",
     "@walletconnect/web3-provider": "^1.0.0-beta.32",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-hot-loader": "^4.12.10",
     "styled-components": "^4.3.2",
     "web3": "^2.0.0-alpha.1",
     "web3connect": "^1.0.0-beta.17"
@@ -61,8 +57,8 @@
     "@types/react-dom": "^16.8.5",
     "@types/styled-components": "^4.1.18",
     "@types/web3": "^1.0.19",
-    "@typescript-eslint/eslint-plugin": "^1.13.0",
-    "@typescript-eslint/parser": "^1.13.0",
+    "@typescript-eslint/eslint-plugin": "^2.0.0",
+    "@typescript-eslint/parser": "^2.0.0",
     "babel-loader": "^8.0.6",
     "babel-plugin-styled-components": "^1.10.6",
     "eslint": "^6.1.0",
@@ -75,6 +71,8 @@
     "html-webpack-plugin": "^4.0.0-beta.8",
     "jest": "^24.8.0",
     "prettier": "^1.18.2",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
     "react-dev-utils": "^9.0.1",
     "rimraf": "^2.6.3",
     "ts-loader": "^6.0.4",

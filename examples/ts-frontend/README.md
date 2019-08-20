@@ -11,7 +11,7 @@ npm install
 ```
 
 ## Running
-To run in hot module reloading mode:
+To run:
 
 ```sh
 npm start

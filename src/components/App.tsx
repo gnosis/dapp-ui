@@ -1,13 +1,6 @@
 import React from 'react'
-import { hot } from 'react-hot-loader/root'
-import { Global } from 'styles'
+import { Global } from '../styles'
 
-const App: React.FC = () => (
-    // <Providers>
-    <>
-        <Global />
-    </>
-    // </Providers>
-)
+const App: React.FC = () => <Global />
 
-export default hot(App)
+export default App
