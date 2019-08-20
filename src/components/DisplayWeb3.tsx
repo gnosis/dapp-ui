@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import ReactDOM from 'react-dom'
 
-import { Web3FrontendAPI } from '../api/web3'
+import { Web3Api } from '../types'
 
 interface DisplayWeb3Props {
-    web3FrontendAPI: Web3FrontendAPI
+    web3Api: Web3Api
 }
 
 interface ClientVersion {
@@ -13,7 +13,7 @@ interface ClientVersion {
     result: string
 }
 
-export const DisplayWeb3: React.FC<DisplayWeb3Props> = ({ web3FrontendAPI }) => {
+export const DisplayWeb3: React.FC<DisplayWeb3Props> = ({ web3Api }) => {
     const [account, setAccount] = useState<string>()
 
     const [balance, setBalance] = useState<string>()
@@ -24,14 +24,14 @@ export const DisplayWeb3: React.FC<DisplayWeb3Props> = ({ web3FrontendAPI }) => 
 
     useEffect(() => {
         const setter = async (): Promise<void> => {
-            const accountsProm = web3FrontendAPI.getAccounts()
-            const networkNameProm = web3FrontendAPI.getNetworkName()
-            const clientVersionProm = web3FrontendAPI.web3.currentProvider.send('web3_clientVersion', [])
+            const accountsProm = web3Api.getAccounts()
+            const networkNameProm = web3Api.getNetworkName()
+            const clientVersionProm = web3Api.web3.currentProvider.send('web3_clientVersion', [])
 
             const [account] = await accountsProm
 
             const [balance, networkName, clientVersion] = await Promise.all([
-                web3FrontendAPI.getBalance(account),
+                web3Api.getBalance(account),
                 networkNameProm,
                 clientVersionProm,
             ])
@@ -45,7 +45,7 @@ export const DisplayWeb3: React.FC<DisplayWeb3Props> = ({ web3FrontendAPI }) => 
         }
 
         setter()
-    }, [web3FrontendAPI])
+    }, [web3Api])
 
     return (
         <div>
