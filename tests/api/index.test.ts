@@ -1,14 +1,15 @@
-import getWeb3API from '../../src/api/web3'
+import getWeb3Api from '../../src/api/web3'
+import { isAddress } from '../../src/utils'
 
 test('[Empty] Initialised frontend Web3 API is NOT undefined', async () => {
-    const web3API = await getWeb3API()
+    const web3API = await getWeb3Api()
 
     expect(web3API).toBeDefined()
 })
 
 test('[Custom Provider - Websocket] Rinkeby Websocket provider loads and host is correct', async () => {
     const customWebsocketProvider = 'wss://rinkeby.infura.io/ws'
-    const web3API = await getWeb3API({
+    const web3API = await getWeb3Api({
         customProvider: customWebsocketProvider,
     })
 
@@ -20,7 +21,7 @@ test('[Custom Provider - Websocket] Rinkeby Websocket provider loads and host is
 
 test('[Custom Provider - Websocket] Function: getAccounts', async () => {
     const customWebsocketProvider = 'wss://rinkeby.infura.io/ws'
-    const web3API = await getWeb3API({
+    const web3API = await getWeb3Api({
         customProvider: customWebsocketProvider,
     })
 
@@ -36,7 +37,7 @@ test('[Custom Provider - Websocket] Function: getAccounts', async () => {
 
 test('[Custom Provider - Websocket] Function: getBalance with known rinkeby address: 0x286E20d6e20d12D5Ba06F8eC2dAe91B7725f9188 (balance may vary, check code)', async () => {
     const customWebsocketProvider = 'wss://rinkeby.infura.io/ws'
-    const web3API = await getWeb3API({
+    const web3API = await getWeb3Api({
         customProvider: customWebsocketProvider,
     })
 
@@ -54,7 +55,7 @@ test('[Custom Provider - Websocket] Function: getBalance with known rinkeby addr
 
 test('[Custom Provider - Websocket] Function: getNetwork', async () => {
     const customWebsocketProvider = 'wss://rinkeby.infura.io/ws'
-    const web3API = await getWeb3API({
+    const web3API = await getWeb3Api({
         customProvider: customWebsocketProvider,
     })
 
@@ -73,13 +74,13 @@ test('[Custom Provider - Websocket] Function: isAddress using known rinkeby addr
     const knownAccount = '0x286E20d6e20d12D5Ba06F8eC2dAe91B7725f9188'
     const fakeAddress = '0xI_AM_FAKE'
 
-    const web3API = await getWeb3API({
+    const web3API = await getWeb3Api({
         customProvider: customWebsocketProvider,
     })
 
     expect(web3API).toBeDefined()
 
-    const { web3, isAddress } = web3API
+    const { web3 } = web3API
     expect(web3.currentProvider.host).toEqual(customWebsocketProvider)
 
     const trueAddress = await isAddress(knownAccount)
@@ -91,7 +92,7 @@ test('[Custom Provider - Websocket] Function: isAddress using known rinkeby addr
 
 test('[Custom Provider - Websocket] Function: getBlock', async () => {
     const customWebsocketProvider = 'wss://rinkeby.infura.io/ws'
-    const web3API = await getWeb3API({
+    const web3API = await getWeb3Api({
         customProvider: customWebsocketProvider,
     })
 
@@ -110,7 +111,7 @@ test('[Custom Provider - Websocket] Function: getTransaction && getTransactionRe
     const customWebsocketProvider = 'wss://rinkeby.infura.io/ws'
     const knownTxHash = '0xdfef14d60038689b74e7ae2e21559ed52a902e9a328aaf884c76b821463afdc8'
 
-    const web3API = await getWeb3API({
+    const web3API = await getWeb3Api({
         customProvider: customWebsocketProvider,
     })
 
@@ -137,7 +138,7 @@ test('[Custom Provider - Websocket] Function: setProvider ==> Switch from RINKEB
     const beforeWSS = 'wss://rinkeby.infura.io/ws'
     const afterWSS = 'wss://mainnet.infura.io/ws'
 
-    const web3API = await getWeb3API({
+    const web3API = await getWeb3Api({
         customProvider: beforeWSS,
     })
 
