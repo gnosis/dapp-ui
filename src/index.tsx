@@ -1,6 +1,6 @@
 import getWeb3Api from './api/web3'
 
-import Web3ConnectButton from './components/WalletIntegration/Web3ConnectButton'
+import { Web3ConnectButton, Web3ConnectManual } from './components'
 import { Web3Options, Web3Api } from './types'
 
 /**
@@ -24,6 +24,7 @@ export {
     launchDappUI,
     // Components
     Web3ConnectButton,
+    Web3ConnectManual,
     // Types
     Web3Api,
     Web3Options,
