@@ -4,6 +4,8 @@ import Web3Connect from 'web3connect'
 import getWeb3Api from '../../api/web3'
 // Components
 import DisplayWeb3 from '../DisplayWeb3'
+import { SAFE_WALLETCONNECT_BRIDGE } from 'globals'
+
 // Types
 import { provider as ProviderType, Web3Api } from '../../types'
 
@@ -15,7 +17,7 @@ const Web3ConnectButton: React.FC = () => {
             <Web3Connect.Button
                 providerOptions={{
                     walletconnect: {
-                        bridge: 'https://safe-walletconnect-ws.dev.gnosisdev.com/',
+                        bridge: SAFE_WALLETCONNECT_BRIDGE,
                     },
                 }}
                 onConnect={async (provider: ProviderType): Promise<void> => {
@@ -31,7 +33,7 @@ const Web3ConnectButton: React.FC = () => {
                 }}
                 label={web3Api ? 'Change Wallet' : 'Connect'}
             />
-            {web3Api && <DisplayWeb3 web3Api={web3Api} />}
+            {web3Api && <DisplayWeb3 title="WEB3CONNECT BUTTON" web3Api={web3Api} />}
         </>
     )
 }

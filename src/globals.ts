@@ -14,3 +14,5 @@ export const NETWORK_ID_TO_NAME = {
     42: 'KOVAN',
     1337: 'PRIVATE',
 }
+
+export const SAFE_WALLETCONNECT_BRIDGE = 'https://safe-walletconnect-ws.dev.gnosisdev.com/'
