@@ -1,6 +1,6 @@
 import getWeb3Api from './api/web3'
 
-import Web3ConnectButton from './components/Web3ConnectButton'
+import Web3ConnectButton from './components/WalletIntegration/Web3ConnectButton'
 import { Web3Options, Web3Api } from './types'
 
 /**

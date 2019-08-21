@@ -1,21 +1,21 @@
 import React, { useState } from 'react'
 import Web3Connect from 'web3connect'
 // API
-import getWeb3Api from '../api/web3'
+import getWeb3Api from '../../api/web3'
 // Components
-import DisplayWeb3 from './DisplayWeb3'
+import DisplayWeb3 from '../DisplayWeb3'
 // Types
-import { provider as ProviderType, Web3Api } from '../types'
+import { provider as ProviderType, Web3Api } from '../../types'
 
 const Web3ConnectButton: React.FC = () => {
-    const [web3Api, setWeb3FrontendAPI] = useState<Web3Api>()
+    const [web3Api, setWeb3Api] = useState<Web3Api>()
 
     return (
         <>
             <Web3Connect.Button
                 providerOptions={{
                     walletconnect: {
-                        bridge: 'https://safe-walletconnect.dev.gnosisdev.com/',
+                        bridge: 'https://safe-walletconnect-ws.dev.gnosisdev.com/',
                     },
                 }}
                 onConnect={async (provider: ProviderType): Promise<void> => {
@@ -24,7 +24,7 @@ const Web3ConnectButton: React.FC = () => {
                         typeof provider === 'object' ? provider.constructor.name : provider,
                     )
                     const web3Api = await getWeb3Api({ customProvider: provider }) // add provider to web3Api
-                    setWeb3FrontendAPI(web3Api)
+                    setWeb3Api(web3Api)
                 }}
                 onClose={(): void => {
                     console.log('Web3Connect Modal Closed') // modal has closed
