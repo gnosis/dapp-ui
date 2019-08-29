@@ -5,5 +5,3 @@
 dist
 node_modules
 stats.json
-lib
-lib-esm
