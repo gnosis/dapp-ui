@@ -4,7 +4,7 @@ import Web3Connect from 'web3connect'
 import getWeb3Api from '../../api/web3'
 // Components
 import DisplayWeb3 from '../DisplayWeb3'
-import { SAFE_WALLETCONNECT_BRIDGE } from 'globals'
+import { SAFE_WALLETCONNECT_BRIDGE } from '../../globals'
 
 // Types
 import { provider as ProviderType, Web3Api } from '../../types'
