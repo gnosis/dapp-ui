@@ -12,7 +12,7 @@ This will also automatically install the deps inside the `examples/ts-frontend` 
 
 ## Running example frontend
 ```sh
-npm run start:example-ts
+npm run build
 ```
 
 Troubleshooting: 
@@ -27,6 +27,12 @@ Currently tests are only run for the `web3` api intialisation found inside `src/
 ```sh
 npm run test
 ```
+
+## Running CRA example
+
+Build the library with `npm run build`
+
+Inside `./examples/cra-test`, install dependencies `npm install` and run the example `npm start`
 
 ## Automatically Fixing Code in VS Code
 To run `eslint --fix` on save add to the settings.json file:
