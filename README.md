@@ -12,7 +12,7 @@ This will also automatically install the deps inside the `examples/ts-frontend` 
 
 ## Running example frontend
 ```sh
-npm run start:example-ts
+npm run start:ts
 ```
 
 Troubleshooting: 
