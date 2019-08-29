@@ -5,6 +5,7 @@ import { Web3Api } from '../types'
 
 interface DisplayWeb3Props {
     web3Api: Web3Api
+    title?: string
 }
 
 interface ClientVersion {
