@@ -11,7 +11,13 @@
     "start": "rm -rf dist && parcel src/index.html",
     "build-prod": "parcel build src/index.html"
   },
-  "dependencies": {},
+  "dependencies": {
+    "react-dom": "^16.9.0"
+  },
+  "alias": {
+    "react": "../../node_modules/react",
+    "@gnosis.pm/dapp-ui": "../.."
+  },
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
