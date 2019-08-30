@@ -18,13 +18,14 @@ export default async (options: Web3Options = {}, force?: boolean): Promise<Web3A
 const getWeb3Provider = async ({ customProvider, onAccountsChange }: Web3Options): Promise<Web3> => {
     let provider: Web3
 
-    // wait window load then check window globals...
-    await windowLoaded
-
     // Use Custom Provider if passed in
-    if (customProvider) provider = new Web3(customProvider)
+    if (customProvider) {
+        provider = new Web3(customProvider)
     // No Custom Provider? Check window.ethereum
-    else if (window && window.ethereum) {
+    } else if (window && window.ethereum) {
+        // wait window load then check window globals...
+        await windowLoaded
+        
         provider = new Web3(window.ethereum)
 
         // enable Provider, if possible
@@ -33,9 +34,10 @@ const getWeb3Provider = async ({ customProvider, onAccountsChange }: Web3Options
         onAccountsChange && onAccountsChange()
     }
     // Check for window.web3's current provider (if it exists)
-    else if (window.web3 && window.web3.currentProvider) provider = new Web3(window.web3.currentProvider)
+    else if (window.web3 && window.web3.currentProvider) {
+        provider = new Web3(window.web3.currentProvider)
     // Else setup localhost version
-    else {
+    } else {
         try {
             const url = 'http://localhost:8545'
             await fetch(url)
