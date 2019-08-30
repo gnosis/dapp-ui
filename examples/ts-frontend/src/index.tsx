@@ -1,7 +1,7 @@
-import React, { ChangeEvent, useState } from '../../../node_modules/react'
-import ReactDOM from '../../../node_modules/react-dom'
+import React, { ChangeEvent, useState } from 'react'
+import ReactDOM from 'react-dom'
 
-import { Web3ConnectButton, Web3ConnectManual } from '../../../src'
+import { Web3ConnectButton, Web3ConnectManual } from '@gnosis.pm/dapp-ui'
 
 const Hello: React.FC = () => {
     const [walletConnectType, setWalletConnectType] = useState<string>(null)
@@ -26,5 +26,5 @@ const Hello: React.FC = () => {
     )
 }
 
-var mountNode = document.getElementById('app')
+const mountNode = document.getElementById('app')
 ReactDOM.render(<Hello />, mountNode)
