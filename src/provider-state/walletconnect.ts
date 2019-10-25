@@ -10,7 +10,7 @@ export interface WalletConnectProviderState {
     accounts: string[]
     chainId: number
     rpcUrl: string
-    connected: boolean
+    isConnected: boolean
     wc: WalletConnector
 }
 
@@ -31,7 +31,7 @@ const getWalletConnectProviderState = (provider: WalletConnectProvider): WalletC
         accounts,
         chainId,
         rpcUrl,
-        connected,
+        isConnected: connected,
         wc,
     }
 }
