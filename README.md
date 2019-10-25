@@ -22,7 +22,6 @@ Troubleshooting:
 4. Safe is enabled but I still see Metamask! Make sure you only have ONE injected wallet instance running. E.g you CANNOT have both Metamask AND Safe enabled. It will result in a race condition for who injects first.
 
 ## Testing
-Currently tests are only run for the `web3` api intialisation found inside `src/api/web3.ts`
 
 ```sh
 npm run test
