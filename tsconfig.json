@@ -13,6 +13,7 @@
         "jsx": "react",
         "allowJs": false,
         "checkJs": false,
+        "strict": true,
         "lib": [
             "dom",
             "es6",
@@ -21,19 +22,18 @@
         ],
         "forceConsistentCasingInFileNames": true,
         "experimentalDecorators": true,
-        "noImplicitAny": true,
         "noUnusedParameters": true,
         "noImplicitReturns": true,
-        "noImplicitThis": true,
         "noUnusedLocals": true,
         "skipLibCheck": true,
-        "strictNullChecks": false,
         "suppressImplicitAnyIndexErrors": true,
         "types": [
-            "jest"
-        ],
+            "jest",
+            "node"
+        ]
     },
     "include": [
-        "src/index.tsx"
+        "src/index.ts",
+        "typings/index.d.ts"
     ]
 }
