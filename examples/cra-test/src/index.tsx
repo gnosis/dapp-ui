@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 
 import ConnectButton from './components/ConnectButton'
 
-const Hello: React.FC = () => {
+const App: React.FC = () => {
     return (
         <div>
             <ConnectButton />
@@ -12,4 +12,4 @@ const Hello: React.FC = () => {
 }
 
 
-ReactDOM.render(<Hello />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));
