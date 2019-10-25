@@ -11,7 +11,7 @@ function getProviderState(provider: null | undefined): null
 function getProviderState(provider: MetamaskProvider): MetamaskProviderState
 function getProviderState(provider: WalletConnectProvider): WalletConnectProviderState
 function getProviderState(provider: Provider): ProviderState
-// function getProviderState(provider: Provider | undefined | null): ProviderState | null
+function getProviderState(provider: Provider | undefined | null): ProviderState | null
 function getProviderState(provider: Provider | undefined | null): ProviderState | null {
     if (!provider) return null
 
