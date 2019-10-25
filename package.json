@@ -45,30 +45,26 @@
     "test": "jest --detectOpenHandles"
   },
   "dependencies": {
-    "@walletconnect/web3-provider": "^1.0.0-beta.34",
-    "styled-components": "^4.3.2",
-    "web3": "^2.0.0-alpha.1",
-    "web3connect": "^1.0.0-beta.19",
-    "react": "^16.9.0"
+    "web3connect": "^1.0.0-beta.23"
   },
   "devDependencies": {
-    "@types/jest": "^24.0.17",
-    "@types/qr-image": "^3.2.1",
-    "@types/react": "^16.8.25",
-    "@types/react-dom": "^16.8.5",
-    "@types/styled-components": "^4.1.18",
-    "@types/web3": "^1.0.19",
-    "@typescript-eslint/eslint-plugin": "^2.0.0",
-    "@typescript-eslint/parser": "^2.0.0",
-    "eslint": "^6.1.0",
-    "eslint-config-prettier": "^6.0.0",
+    "@types/ethereum-protocol": "^1.0.0",
+    "@types/jest": "^24.0.19",
+    "@types/node": "^12.11.7",
+    "@types/web3-provider-engine": "^14.0.0",
+    "@typescript-eslint/eslint-plugin": "^2.5.0",
+    "@typescript-eslint/parser": "^2.5.0",
+    "@walletconnect/types": "^1.0.0-beta.37",
+    "@walletconnect/web3-provider": "^1.0.0-beta.37",
+    "eslint": "^6.5.1",
+    "eslint-config-prettier": "^6.4.0",
     "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-jest": "^22.15.0",
-    "eslint-plugin-prettier": "^3.1.0",
-    "eslint-plugin-react": "^7.14.3",
-    "jest": "^24.8.0",
+    "eslint-plugin-jest": "^22.20.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react": "^7.16.0",
+    "jest": "^24.9.0",
     "prettier": "^1.18.2",
-    "rimraf": "^2.6.3",
-    "typescript": "^3.6.2"
+    "rimraf": "^3.0.0",
+    "typescript": "^3.6.4"
   }
 }
