@@ -156,7 +156,7 @@ export const useProvider = (wcOptions?: WalletConnectInits) => {
                 window.removeEventListener('beforeunload', killWC)
             }
         }
-    }, [provider])
+    }, [provider, ifMounted])
 
     return { connectToProvider, disconnectFromProvider, provider, error }
 }
@@ -176,7 +176,7 @@ export const useCurrentAccount = (provider: Provider) => {
     useEffect(() => {
         const subs = createSubscriptions(provider)
         if (subs) return subs.onAccountsChanged(([account]) => ifMounted(() => setAccount(account)))
-    }, [provider])
+    }, [provider, ifMounted])
 
     return account
 }
@@ -209,7 +209,7 @@ export const useNetwork = (provider: Provider): Network => {
 
         if (isMetamaskSubscriptions(subs)) return subs.onNetworkChanged(setChainIfMounted)
         if (isWalletConnectSubscriptions(subs)) return subs.onChainChanged(setChainIfMounted)
-    }, [provider])
+    }, [provider, ifMounted])
 
     return id2Network[+chainId]
 }
@@ -244,7 +244,7 @@ export const useAccountBalance = ({ account, web3 }: { account: string, web3: We
         })
 
         return () => { sub.unsubscribe() }
-    }, [account, web3])
+    }, [account, ifMounted, web3])
 
     return balance
 }

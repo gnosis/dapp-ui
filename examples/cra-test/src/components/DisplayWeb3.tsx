@@ -34,7 +34,7 @@ export const DisplayWeb3: React.FC<DisplayWeb3Props> = ({ web3, provider, title 
         }
 
         setter()
-    }, [web3, network])
+    }, [web3, network, ifMounted])
 
     const account = useCurrentAccount(provider)
 

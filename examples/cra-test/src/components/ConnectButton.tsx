@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useMemo } from 'react'
+import React from 'react'
 import {
     WalletConnectInits,
 } from '@gnosis.pm/dapp-ui'
