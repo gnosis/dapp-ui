@@ -5,6 +5,7 @@
   "main": "lib/index.js",
   "module": "lib-esm/index.js",
   "jsnext:main": "lib-esm/index.js",
+  "types": "lib-esm/index.d.ts",
   "sideEffects": false,
   "directories": {
     "test": "tests"
