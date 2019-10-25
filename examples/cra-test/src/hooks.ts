@@ -43,12 +43,8 @@ interface IFElseFunc {
 // --------------------------------------------------
 
 const windowLoaded = new Promise(resolve => {
-    console.log('document.readyState', document.readyState);
     if (document.readyState === "complete") return resolve();
-    window.addEventListener("load", ev => {
-        console.log('Loaded', ev)
-        resolve()
-    }, {once: true});
+    window.addEventListener("load", resolve, {once: true});
   });
 
 const closeWCconnection = (provider: WalletConnectProvider) => {
