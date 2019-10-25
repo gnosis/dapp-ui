@@ -1,7 +1,7 @@
 {
   "name": "@gnosis.pm/dapp-ui",
   "version": "0.5.0",
-  "description": "Reusable React components and setup functions built with Typescript and love. From Gnosis.",
+  "description": "Web3 provider setup functions built with Typescript and love. From Gnosis.",
   "main": "lib/index.js",
   "module": "lib-esm/index.js",
   "jsnext:main": "lib-esm/index.js",
