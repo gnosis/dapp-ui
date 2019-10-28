@@ -7,7 +7,7 @@ export interface MetamaskProviderState {
     isMetaMask: true
     autoRefreshOnNetworkChange: boolean
     networkVersion: string
-    chainId: string
+    chainId: number
     selectedAddress: string | null
     accounts: string[]
     isConnected: boolean
@@ -23,7 +23,7 @@ const getMetamaskProviderState = (provider: MetamaskProvider): MetamaskProviderS
         isMetaMask,
         autoRefreshOnNetworkChange,
         networkVersion,
-        chainId,
+        chainId: +chainId,
         selectedAddress,
         // don't return null for accounts[]
         accounts: selectedAddress == null ? [] : [selectedAddress],

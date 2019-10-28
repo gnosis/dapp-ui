@@ -1,6 +1,6 @@
 {
   "name": "@gnosis.pm/dapp-ui",
-  "version": "0.5.0",
+  "version": "0.5.3",
   "description": "Web3 provider setup functions built with Typescript and love. From Gnosis.",
   "main": "lib/index.js",
   "module": "lib-esm/index.js",

@@ -17,7 +17,7 @@ function createSubscriptions(provider: null | undefined): null
 function createSubscriptions(provider: MetamaskProvider): MetamaskSubscriptions
 function createSubscriptions(provider: WalletConnectProvider): WalletConnectSubscriptions
 function createSubscriptions(provider: Provider): Subscriptions
-// function createSubscriptions(provider: Provider | undefined | null): Subscriptions | null
+function createSubscriptions(provider: Provider | undefined | null): Subscriptions | null
 function createSubscriptions(provider: Provider | undefined | null): Subscriptions | null {
     if (!provider) return null
 
