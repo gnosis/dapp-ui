@@ -29,7 +29,7 @@ export const useIfMounted = () => {
 
     return useCallback<IFElseFunc>(<T extends AnyFunc, U extends AnyFunc>(ifMountedFunc: T | null | undefined, ifNotMountedFunc?: U): ReturnType<T | U> | void => {
         if (mounted.current && ifMountedFunc) return ifMountedFunc()
-if (!mounted.current && ifNotMountedFunc) return ifMountedFunc()
+        if (!mounted.current && ifNotMountedFunc) return ifNotMountedFunc()
     }, [])
 }
 
@@ -48,7 +48,7 @@ const windowLoaded = new Promise(resolve => {
   });
 
 const closeWCconnection = (provider: WalletConnectProvider) => {
-    if (getProviderState(provider).connected) {
+    if (getProviderState(provider).isConnected) {
         console.log('closing WC session')
         provider.close()
     }
@@ -205,7 +205,7 @@ export const useNetwork = (provider: Provider): Network => {
 
     useEffect(() => {
         const subs = createSubscriptions(provider)
-        const setChainIfMounted = (chainId: string | number) => ifMounted(() => setChainId(chainId))
+        const setChainIfMounted = (chainId: string | number) => ifMounted(() => setChainId(+chainId))
 
         if (isMetamaskSubscriptions(subs)) return subs.onNetworkChanged(setChainIfMounted)
         if (isWalletConnectSubscriptions(subs)) return subs.onChainChanged(setChainIfMounted)
