@@ -29,7 +29,7 @@ export const useIfMounted = () => {
 
     return useCallback<IFElseFunc>(<T extends AnyFunc, U extends AnyFunc>(ifMountedFunc: T | null | undefined, ifNotMountedFunc?: U): ReturnType<T | U> | void => {
         if (mounted.current && ifMountedFunc) return ifMountedFunc()
-        else if (ifNotMountedFunc) return ifNotMountedFunc()
+if (!mounted.current && ifNotMountedFunc) return ifMountedFunc()
     }, [])
 }
 
