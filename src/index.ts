@@ -10,3 +10,10 @@ export {
     JSONRPCResponsePayload,
     WalletConnectInits,
 } from './provider'
+
+export {
+    default as getProviderState,
+    MetamaskProviderState,
+    WalletConnectProviderState,
+    ProviderState,
+} from './provider-state'
