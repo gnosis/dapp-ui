@@ -1,4 +1,5 @@
 import { MetamaskProvider } from '../provider/types'
+import { generateSubscriptionFunctionForProvider } from './common'
 
 export const MetamaskSubscriptionsSymbol = Symbol('MetamaskSubscriptions')
 
@@ -12,59 +13,14 @@ export interface MetamaskSubscriptions {
 }
 
 const createMetamaskSubscriptions = (provider: MetamaskProvider): MetamaskSubscriptions => {
-    const onAccountsChanged: MetamaskSubscriptions['onAccountsChanged'] = (cb, once) => {
-        if (once) {
-            provider.once('accountsChanged', cb)
-        } else {
-            provider.on('accountsChanged', cb)
-        }
-
-        return () => {
-            provider.off('accountsChanged', cb)
-        }
-    }
-
-    const onNetworkChanged: MetamaskSubscriptions['onNetworkChanged'] = (cb, once) => {
-        if (once) {
-            provider.once('networkChanged', cb)
-        } else {
-            provider.on('networkChanged', cb)
-        }
-
-        return () => {
-            provider.off('networkChanged', cb)
-        }
-    }
-    const onData: MetamaskSubscriptions['onData'] = (cb, once) => {
-        if (once) {
-            provider.once('data', cb)
-        } else {
-            provider.on('data', cb)
-        }
-
-        return () => {
-            provider.off('data', cb)
-        }
-    }
-
-    const onError: MetamaskSubscriptions['onError'] = (cb, once) => {
-        if (once) {
-            provider.once('error', cb)
-        } else {
-            provider.on('error', cb)
-        }
-
-        return () => {
-            provider.off('error', cb)
-        }
-    }
+    const generateSubscriptionFunction = generateSubscriptionFunctionForProvider(provider)
 
     return {
         [MetamaskSubscriptionsSymbol]: true,
-        onAccountsChanged,
-        onNetworkChanged,
-        onData,
-        onError,
+        onAccountsChanged: generateSubscriptionFunction('accountsChanged'),
+        onNetworkChanged: generateSubscriptionFunction('networkChanged'),
+        onData: generateSubscriptionFunction('data'),
+        onError: generateSubscriptionFunction('error'),
     }
 }
 
