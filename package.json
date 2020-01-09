@@ -35,8 +35,9 @@
   },
   "homepage": "https://github.com/gnosis/dapp-ui#readme",
   "scripts": {
-    "start": "NODE_ENV=development webpack-dev-server --mode development --hot",
-    "start:example-ts": "cd ./examples/ts-frontend && npm start && cd ../../",
+    "start": "npm run install:examples && npm run start:example-ts",
+    "start:example-ts": "npm --prefix ./examples/cra/ start",
+    "install:examples": "npm run build && npm --prefix ./examples/cra/ install",
     "build": "rimraf ./lib ./lib-esm && npm run build:commonjs && npm run build:esm",
     "build:commonjs": "tsc",
     "build:esm": "tsc -m es6 -t esnext --outDir lib-esm",
