@@ -1,0 +1,9 @@
+.cache
+.DS_Store
+.history
+.vscode
+dist
+node_modules
+stats.json
+lib
+lib-esm

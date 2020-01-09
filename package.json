@@ -1,0 +1,72 @@
+{
+  "name": "@gnosis.pm/dapp-ui",
+  "version": "0.5.3",
+  "description": "Web3 provider setup functions built with Typescript and love. From Gnosis.",
+  "main": "lib/index.js",
+  "module": "lib-esm/index.js",
+  "jsnext:main": "lib-esm/index.js",
+  "types": "lib-esm/index.d.ts",
+  "sideEffects": false,
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gnosis/dapp-ui.git"
+  },
+  "files": [
+    "lib",
+    "lib-esm"
+  ],
+  "keywords": [
+    "gnosis",
+    "dapp",
+    "ui",
+    "ethereum",
+    "blockchain",
+    "typescript",
+    "javascript",
+    "react"
+  ],
+  "author": "W3stside <doohhello@gmail.com>, Velenir<>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gnosis/dapp-ui/issues"
+  },
+  "homepage": "https://github.com/gnosis/dapp-ui#readme",
+  "scripts": {
+    "start": "npm run install:examples && npm run start:example-ts",
+    "start:example-ts": "npm --prefix ./examples/cra/ start",
+    "install:examples": "npm run build && npm --prefix ./examples/cra/ install",
+    "build": "rimraf ./lib ./lib-esm && npm run build:commonjs && npm run build:esm",
+    "build:commonjs": "tsc",
+    "build:esm": "tsc -m es6 -t esnext --outDir lib-esm",
+    "eslint": "eslint . --ext .ts,.tsx,.js",
+    "eslint-fix": "eslint --fix . --ext .ts,.tsx,.js",
+    "stats": "NODE_ENV=production webpack --mode production --env.stats --profile --json > stats.json && webpack-bundle-analyzer ./stats.json ./dist",
+    "test": "jest --detectOpenHandles"
+  },
+  "dependencies": {
+    "web3connect": "^1.0.0-beta.23"
+  },
+  "devDependencies": {
+    "@types/ethereum-protocol": "^1.0.0",
+    "@types/jest": "^24.0.20",
+    "@types/node": "^12.11.7",
+    "@types/web3-provider-engine": "^14.0.0",
+    "@typescript-eslint/eslint-plugin": "^2.5.0",
+    "@typescript-eslint/parser": "^2.5.0",
+    "@walletconnect/types": "^1.0.0-beta.38",
+    "@walletconnect/web3-provider": "^1.0.0-beta.38",
+    "eslint": "^6.6.0",
+    "eslint-config-prettier": "^6.5.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^23.0.1",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react": "^7.16.0",
+    "jest": "^24.9.0",
+    "prettier": "^1.18.2",
+    "rimraf": "^3.0.0",
+    "typescript": "^3.6.4"
+  }
+}

@@ -1,0 +1,39 @@
+{
+    "compilerOptions": {
+        "outDir": "lib",
+        "declaration": true,
+        "declarationMap": true,
+        "esModuleInterop": true,
+        "target": "es6",
+        "downlevelIteration": true,
+        "importHelpers": true,
+        "sourceMap": true,
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "jsx": "react",
+        "allowJs": false,
+        "checkJs": false,
+        "strict": true,
+        "lib": [
+            "dom",
+            "es6",
+            "es7",
+            "esnext"
+        ],
+        "forceConsistentCasingInFileNames": true,
+        "experimentalDecorators": true,
+        "noUnusedParameters": true,
+        "noImplicitReturns": true,
+        "noUnusedLocals": true,
+        "skipLibCheck": true,
+        "suppressImplicitAnyIndexErrors": true,
+        "types": [
+            "jest",
+            "node"
+        ]
+    },
+    "include": [
+        "src/index.ts",
+        "typings/index.d.ts"
+    ]
+}
