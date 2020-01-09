@@ -1,5 +1,9 @@
 import { Provider, MetamaskProvider, WalletConnectProvider } from './provider/types'
 
+import { Subscriptions, MetamaskSubscriptions, WalletConnectSubscriptions } from './subscriptions'
+import { MetamaskSubscriptionsSymbol } from './subscriptions/metamask'
+import { WalletConnectSubscriptionsSymbol } from './subscriptions/walletConnect'
+
 import { ProviderState, MetamaskProviderState, WalletConnectProviderState } from './provider-state'
 import { MetamaskProviderStateSymbol } from './provider-state/metamask'
 import { WalletConnectProviderStateSymbol } from './provider-state/walletconnect'
@@ -20,4 +24,15 @@ export const isWalletConnectState = (
     providerState: ProviderState | null | undefined,
 ): providerState is WalletConnectProviderState => {
     return !!providerState && providerState[WalletConnectProviderStateSymbol] === true
+}
+
+export const isMetamaskSubscriptions = (
+    subscriptions: Subscriptions | null | undefined,
+): subscriptions is MetamaskSubscriptions => {
+    return !!subscriptions && subscriptions[MetamaskSubscriptionsSymbol] === true
+}
+export const isWalletConnectSubscriptions = (
+    subscriptions: Subscriptions | null | undefined,
+): subscriptions is WalletConnectSubscriptions => {
+    return !!subscriptions && subscriptions[WalletConnectSubscriptionsSymbol] === true
 }
